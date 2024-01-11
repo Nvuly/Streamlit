@@ -3,12 +3,12 @@ import streamlit as st
 
 ### sidebar 설치 + selectbox 추가
 add_sidebar = st.sidebar.selectbox(
-    '서울시 자전거 연도별 대여 및 반납건수',# 사이드바의 설명글
+    '서울시 자전거 연도별 대여건수',# 사이드바의 설명글
     ('2015년', '2016년', '2017년') #사이드바의 항목
 )
 
 add_sidebar2 = st.sidebar.selectbox(
-    '서울시 자전거 연도별 대여 및 반납건수 시각화',
+    '서울시 자전거 연도별 반납건수 시각화',
     ('2015년', '2016년', '2017년')
 )
 
@@ -26,7 +26,7 @@ with st.sidebar:
         '연도별 대여건수',
         ('2015년', '2016년', '2017년')
     )
-    if add.radio =='2015년':
+    if add_radio =='2015년':
         st.write('2015년의 서울시 자전거 대여건수')
     elif add_radio == '2016년':
         st.write('2016년의 서울시 자전거 대여건수')
