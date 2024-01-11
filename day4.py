@@ -1,4 +1,6 @@
 ### 필요한 라이브러리 임폴트
+import pandas as pd
+import numpy as np
 import streamlit as st
 
 ### sidebar 설치 + selectbox 추가
@@ -33,3 +35,55 @@ with st.sidebar:
     else:
         st.write('2017년의 서울시 자전거 대여건수')
 # with 구문을 써줘야 본문이 아닌 사이드바에 출력된다. 
+
+
+### layout 생성 --> 3칸 생성 --> 각 칸에 수치 정보 출력
+col1, col2, col3 = st.columns(3)
+with col1:
+    st.metric(label='Temperature', value='70F', delta='1.2F')
+with col2:
+    st.metric(label='Wind', value='2m/s', delta='-8%')
+with col3:
+    st.metric(label='Humidity', value='86%', delta='4%')
+
+print('\n') #웹상에서 한칸 뜬다
+
+
+
+#### DataFrame 생성 및 출력
+
+# 제목 생성
+
+st.header('DataFrame 생성하기')
+
+# DataFrame 생성
+
+df = pd.read_csv('iris_dataset.csv')
+
+# st.write(df) # 이렇게 해도 출럭이 되지만
+
+# 버튼을 눌렀을 때 나오게 하고 싶다. 버튼을 만들면 됨
+
+# 버튼을 생성해서 버튼을 클릭하면 --> if st.button():
+### button 생성
+if st.button('데이터프레임 생성'):
+    st.write(df)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
